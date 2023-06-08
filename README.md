@@ -42,7 +42,15 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <p>Step 6: Verifying the Perpetual Ping on Client-1</p>
 <img width="900" height="500" alt="image" src="https://github.com/SamEshaia/Active-Directory-Deployed-in-the-Cloud--Azure-/assets/124312452/21f6105b-7177-46c2-be6f-8550eaca8a5d">
 <p>Return to the Client-1 Virtual Machine and verify that you are receiving replies from the Domain Controller, ensuring that the perpetual ping is no longer timing out.</p>
-
-
-
-
+<h3>Install Active Directory</h3>
+<p>Step 7: Installing Active Directory on the Domain Controller</p>
+<img width="900" height="500" alt="image" src="https://github.com/SamEshaia/Active-Directory-Deployed-in-the-Cloud--Azure-/assets/124312452/4d7ca2fd-4380-4a29-956b-9e6674d7b884">
+<p>Navigate to the DC-1 Virtual Machine and open the Server Manager. Click on "Add Roles and Features" and proceed to the server roles section. Check the box for "Active Directory Domain Services" and click "Add Features" when prompted. Continue clicking next through the subsequent pages until you reach the confirmation section, then click "Install" to initiate the installation process.</p>
+<p>Step 8: Promoting to a Domain Controller</p>
+<img width="900" height="500" alt="image" src="https://github.com/SamEshaia/Active-Directory-Deployed-in-the-Cloud--Azure-/assets/124312452/cca59385-c48e-4f1a-b1a5-c469732575ad">
+<p>After the installation of Active Directory, locate the flag with an exclamation point in the top right corner of the Server Manager. Click on the flag and select "Promote this server to a domain controller."</p>
+<p>In the "Active Directory Domain Services Configuration Wizard," choose the deployment operation as "add a new forest" and specify a domain name of your choice, such as "mydomain.com."</p>
+<p>Proceed to set a password, which can be something like "Password1" for this project. Click "Next" until you reach the installation section, then click "Install." The installation may require a restart, either automatic or manual, upon completion.</p>
+<p>Step 9: Logging back into the Domain Controller</p>
+<img width="900" height="500" alt="image" src="https://github.com/SamEshaia/Active-Directory-Deployed-in-the-Cloud--Azure-/assets/124312452/961c09ab-91bf-4abb-9815-efd2cd06174d">
+<p>After the restart, log back into the DC-1 virtual machine. Use the format "mydomain.com\username" to log in, where "mydomain.com" is your domain name and "username" is your specific username. For instance, if your domain name is "mydomain.com" and your username is "samuser," you would enter "mydomain.com\samuser" as the login credentials.</p>
