@@ -54,3 +54,19 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <p>Step 9: Logging back into the Domain Controller</p>
 <img width="900" height="500" alt="image" src="https://github.com/SamEshaia/Active-Directory-Deployed-in-the-Cloud--Azure-/assets/124312452/961c09ab-91bf-4abb-9815-efd2cd06174d">
 <p>After the restart, log back into the DC-1 virtual machine. Use the format "mydomain.com\username" to log in, where "mydomain.com" is your domain name and "username" is your specific username. For instance, if your domain name is "mydomain.com" and your username is "samuser," you would enter "mydomain.com\samuser" as the login credentials.</p>
+<h3>Create an Admin and Normal User Account in Active Directory</h3>
+<p>Step 10: Create Active Directory Users and Computers (ADUC) Organizational Unit</p>
+<img width="900" height="500" alt="image" src="https://github.com/SamEshaia/Active-Directory-Deployed-in-the-Cloud--Azure-/assets/124312452/2d8aec41-655b-447a-81d4-4df47e482b76">
+<p>After logging into the Domain Controller VM, search for "Active Directory Users and Computers" in the Windows search bar. Right-click on "mydomain.com" and select "New," then click on "Organizational Unit." In the pop-up window, enter "_EMPLOYEES" and click OK. Similarly, create an "_ADMINS" organizational unit.</p>
+<p>Once you have created both organizational units, you can click the refresh button at the top of the page to arrange the new objects at the top for better organization.</p>
+<p>Step 11: Creating a New Employee</p>
+<img width="900" height="500" alt="image" src="https://github.com/SamEshaia/Active-Directory-Deployed-in-the-Cloud--Azure-/assets/124312452/1a4ae0ae-0f3d-407a-8986-d7217a0d8ea1">
+<p>To add a new admin in the _ADMINS folder, select the _ADMINS object and right-click on an empty space within the folder. Choose "New" and then select "User" from the menu. For this example, use the name "Sam Eshaia" for the first and last name. Set the user logon name as Sam_admin.</p>
+<p>Proceed to click "Next" and set a password of your choice, keeping it simple for practice purposes. In this lab, uncheck the box "User must change password at next logon" as it is only for practice. Usually, you would require the new user to change their password upon next logon for security reasons.</p>
+<p>Once the password is set, click "Next" and finish the process.</p>
+<p>Step 12: Adding the New Employee to the "Domain Admins" Security Group</p>
+<img width="1000" height="400" alt="image" src="https://github.com/SamEshaia/Active-Directory-Deployed-in-the-Cloud--Azure-/assets/124312452/c295350b-5a8a-4fb0-8675-dea720520d21">
+<p>Although the user has been created in the _ADMINS folder, they haven't been assigned admin privileges yet. To grant admin rights, right-click on the user and select "Properties." Go to the "Member Of" tab and click "Add." In the text box, type "domain" and click "Check Names." A window will appear displaying matching names. Select "Domain Admins" and click OK. Finally, click Apply and OK in the subsequent windows to save the changes.</p>
+<p>Step 13: Step 13: Logging in as the New Employee</p>
+<img width="900" height="500" alt="image" src="https://github.com/SamEshaia/Active-Directory-Deployed-in-the-Cloud--Azure-/assets/124312452/41879a3a-c244-4e50-a3ed-bc4fddafee0a">
+<p>To switch to the role of the new employee, first, log out of the main Domain Controller. Then, log back in using the credentials of the new employee. In this case, the login would be "mydomain.com\sam_admin" (replace "sam_admin" with the appropriate username for your case). This will allow you to experience the environment from the perspective of the newly added employee.</p>
